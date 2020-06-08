@@ -2,12 +2,18 @@ language: java
 os: linux
 dist: xenial
 
+
 jdk:
     - openjdk11
 
-install:
-    - gradle assemble
+install: true
+
+addons:
+  sonarcloud:
+    organization: "d0543027"
+    token:
+      secure: "pT7Dp5bbjQiNRJjwcG0XH2nm7rvqk72l/zsa6ymc5yiTGpEJHlIMVtwMkfyriAIzh55RwZKAOQWY8NZxtFA2nY8adCkLl6mFY5ApEQcICIR+WvZ/4bcRvlUjNHBmpojUuSv0U7tFxNp9ImedHcMnVFgyV87uxLcG3Jr/iVOzNp0F2y3S9fq3WL7MY51DajI32TH0Ro8pyqr2Oyxun/ST35dDvvi6IoDRbWdJiEuy++cuVNCjjEhpFYtMTaHnRboRoysgl8KikGao9ILnW8heA26cgmLSouHi2eEu0C4cmxZ8eHzzxQN95rat8Z050Uyt2e8GhsiJk48olv0JF3K8QavXWaMHBILzrK3EjEdbLfQ25sL+X79hrCD4ad2PJhHhmsuCgfPniHzS6NsKO8ez5Ma7y+CzXPLHYcq6IkaC62X4BalHY6WlWkgvEo1mdRMJhXNNvBOieGq0r3yUYMrh3uwQb7HoiGiDDxURtSZSaOf0JrTNj1AfP8YkLqTavs95sNbtBQvlSQm4qDQDggeO9sxm5ZbeLnyGsdYKgzFBIkeNFIowEvvuwQpQAfn8jq1q3jw/Qm9Pm7suM9Z5QykDgubhni1yJTWfwtboXe9H/QNlsVT4+V1OCIA8kyLDoLQYkWGT7LVKyvp6YuQmcsq0OaISaaxF3Bvo0WtrPiWTQ0I="
 
 script:
-    - gradle test
-    - gradle sonarqube -Dsonar.host.url=$SONAR_HOST_URL -Dsonar.login=$SONAR_TOKEN
+    - gradle jacocoTestReport
+    - gradle sonarqube -Dsonar.projectKey=$SONAR_PROJECT_KEY
