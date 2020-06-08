@@ -17,18 +17,18 @@ public class InputFile {
 		ArrayList<School> arrayListSchools = new ArrayList<School>();
 		// String path = "./input/school_input.csv";
 		InputStreamReader isr = new InputStreamReader(new FileInputStream(path));
-		BufferedReader reader = new BufferedReader(isr);
-		String line = null;
-		// 讀取標題
-		line = reader.readLine();
-		while ((line = reader.readLine()) != null) {
-			String[] item = line.split(",");
-			arrayListSchools.add(new School(item[0].trim(), Double.parseDouble(item[1].trim()),
-					Double.parseDouble(item[2].trim()), Double.parseDouble(item[3].trim()),
-					Double.parseDouble(item[4].trim()), Double.parseDouble(item[5].trim())));
+		try (BufferedReader reader = new BufferedReader(isr)) {
+			String line = null;
+			// 讀取標題
+			line = reader.readLine();
+			while ((line = reader.readLine()) != null) {
+				String[] item = line.split(",");
+				arrayListSchools.add(new School(item[0].trim(), Double.parseDouble(item[1].trim()),
+						Double.parseDouble(item[2].trim()), Double.parseDouble(item[3].trim()),
+						Double.parseDouble(item[4].trim()), Double.parseDouble(item[5].trim())));
+			}
+			reader.close();
 		}
-		reader.close();
-
 		School[] schools = new School[arrayListSchools.size()];
 		schools = arrayListSchools.toArray(schools);
 
@@ -46,19 +46,19 @@ public class InputFile {
 		ArrayList<Student> arrayListStudents = new ArrayList<Student>();
 		// String path = "./input/student_input.csv";
 		InputStreamReader isr = new InputStreamReader(new FileInputStream(path));
-		BufferedReader reader = new BufferedReader(isr);
-		String line = null;
-		// 讀取標題
-		line = reader.readLine();
-		while ((line = reader.readLine()) != null) {
-			String[] item = line.split(",");
-			arrayListStudents
-					.add(new Student(item[0].trim(), Integer.parseInt(item[1].trim()), Integer.parseInt(item[2].trim()),
-							Integer.parseInt(item[3].trim()), Integer.parseInt(item[4].trim()),
-							Integer.parseInt(item[5].trim()), item[6].trim(), item[7].trim(), item[8].trim()));
+		try (BufferedReader reader = new BufferedReader(isr)) {
+			String line = null;
+			// 讀取標題
+			line = reader.readLine();
+			while ((line = reader.readLine()) != null) {
+				String[] item = line.split(",");
+				arrayListStudents.add(
+						new Student(item[0].trim(), Integer.parseInt(item[1].trim()), Integer.parseInt(item[2].trim()),
+								Integer.parseInt(item[3].trim()), Integer.parseInt(item[4].trim()),
+								Integer.parseInt(item[5].trim()), item[6].trim(), item[7].trim(), item[8].trim()));
+			}
+			reader.close();
 		}
-		reader.close();
-
 		Student[] students = new Student[arrayListStudents.size()];
 		students = arrayListStudents.toArray(students);
 
