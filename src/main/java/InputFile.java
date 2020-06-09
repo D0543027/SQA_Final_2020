@@ -27,7 +27,6 @@ public class InputFile {
 						Double.parseDouble(item[2].trim()), Double.parseDouble(item[3].trim()),
 						Double.parseDouble(item[4].trim()), Double.parseDouble(item[5].trim())));
 			}
-			reader.close();
 		}
 		School[] schools = new School[arrayListSchools.size()];
 		schools = arrayListSchools.toArray(schools);
@@ -57,7 +56,6 @@ public class InputFile {
 								Integer.parseInt(item[3].trim()), Integer.parseInt(item[4].trim()),
 								Integer.parseInt(item[5].trim()), item[6].trim(), item[7].trim(), item[8].trim()));
 			}
-			reader.close();
 		}
 		Student[] students = new Student[arrayListStudents.size()];
 		students = arrayListStudents.toArray(students);

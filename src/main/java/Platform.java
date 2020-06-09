@@ -96,7 +96,6 @@ public class Platform {
 				}
 				fwriter.write("----------------------------------------------------------------------\n");
 			}
-			fwriter.close();
 		}
 	}
 
@@ -114,7 +113,6 @@ public class Platform {
 				fwriter.write("\n");
 				fwriter.write("----------------------------------------------------------------------\n");
 			}
-			fwriter.close();
 		}
 	}
 }
