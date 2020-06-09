@@ -1,8 +1,15 @@
+package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import main.MyException;
+import main.Platform;
+import main.PreselectionInformation;
+import main.School;
+import main.Student;
 
 public class PlatformTest {
 	@Test
@@ -131,7 +138,7 @@ public class PlatformTest {
 		assertEquals("備取1:02", a.get(3).getRank() + ":" + a.get(4).getStudentName());
 	}
 	
-	@Test(expected=Exception.class)
+	@Test(expected=MyException.class)
 	public void test6() throws Exception {
 		Student st1 = new Student("01", 11, 20, 30, 40, 50, "A", "B", "C");
 		Student[] students = new Student[] {st1};

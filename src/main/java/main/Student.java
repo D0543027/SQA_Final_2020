@@ -1,3 +1,4 @@
+package main;
 
 public class Student {
   private String studentName;
@@ -25,31 +26,31 @@ public class Student {
   public Student(
       String studentName,
       int chinese,int english,int math,int physical,int chemistry,
-      String order1,String order2,String order3)  throws Exception {
+      String order1,String order2,String order3)  throws MyException {
     this.studentName = studentName;
         
     if ((chinese < 0) || (chinese > 100)) {
-      throw new Exception(studentName + "Chinese score error");
+      throw new MyException(studentName + "Chinese score error");
     }
     this.chinese = chinese;
         
     if ((english < 0) || (english > 100)) {
-      throw new Exception(studentName + "English score error");
+      throw new MyException(studentName + "English score error");
     }
     this.english = english;
         
     if ((math < 0) || (math > 100)) {
-      throw new Exception(studentName + "Math score error");
+      throw new MyException(studentName + "Math score error");
     }
     this.math = math;
         
     if ((physical < 0) || (physical > 100)) {
-      throw new Exception(studentName + "Physical score error");
+      throw new MyException(studentName + "Physical score error");
     }
     this.physical = physical;
         
     if ((chemistry < 0) || (chemistry > 100)) {
-      throw new Exception(studentName + "Chemistry score error");
+      throw new MyException(studentName + "Chemistry score error");
     }
     this.chemistry = chemistry;
         

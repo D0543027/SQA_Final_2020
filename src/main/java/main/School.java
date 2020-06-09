@@ -1,3 +1,4 @@
+package main;
 import java.util.ArrayList;
 
 public class School {
@@ -26,31 +27,31 @@ public class School {
   public School(
           String schoolName,
           double chineseWeights,double englishWeights,double mathWeights,
-          double physicalWeights,double chemistryWeights) throws Exception {
+          double physicalWeights,double chemistryWeights) throws MyException {
     this.schoolName = schoolName;
       
     if ((chineseWeights < 0) || (chineseWeights > 2)) {
-      throw new Exception(schoolName + "ChineseWeights error");
+      throw new MyException(schoolName + "ChineseWeights error");
     }
     this.chineseWeights = chineseWeights;
       
     if ((englishWeights < 0) || (englishWeights > 2)) {
-      throw new Exception(schoolName + "englishWeights error");
+      throw new MyException(schoolName + "englishWeights error");
     }
     this.englishWeights = englishWeights;
       
     if ((mathWeights < 0) || (mathWeights > 2)) {
-      throw new Exception(schoolName + "mathWeights error");
+      throw new MyException(schoolName + "mathWeights error");
     }
     this.mathWeights = mathWeights;
       
     if ((physicalWeights < 0) || (physicalWeights > 2)) {
-      throw new Exception(schoolName + "physicalWeights error");
+      throw new MyException(schoolName + "physicalWeights error");
     }
     this.physicalWeights = physicalWeights;
       
     if ((chemistryWeights < 0) || (chemistryWeights > 2)) {
-      throw new Exception(schoolName + "chemistryWeights error");
+      throw new MyException(schoolName + "chemistryWeights error");
     }
     this.chemistryWeights = chemistryWeights;
   }
@@ -93,7 +94,7 @@ public class School {
    * @param scoreSum 計算完的總分
    */
   public void addAndSortPreselection(Student student,double scoreSum) {
-    if (this.preselection.size() == 0) {
+    if (this.preselection.isEmpty()) {
       this.preselection.add(new PreselectionInformation(student.getStudentName(),scoreSum));
       this.studentData.add(student);
     } else {
@@ -122,11 +123,9 @@ public class School {
    * 依照名單填入正備取.
    */
   public void fillPreselection() {
-    //System.out.println(this.schoolName);
     //每所學校正取設定為3人
     int maxPositiveFetch = 3;
     int positiveFetchRank = 1;
-    int sameRankCount = 1;
     //正取排名
     for (int i = 0;i < this.preselection.size();i++) {
       //第一名

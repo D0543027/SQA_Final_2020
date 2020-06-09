@@ -1,3 +1,4 @@
+package main;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -15,7 +16,7 @@ public class Platform {
 	 * @param schools  所有學校
 	 * @throws Exception
 	 */
-	public Platform(Student[] students, School[] schools) throws Exception {
+	public Platform(Student[] students, School[] schools) throws MyException {
 		this.std = students;
 		this.sch = schools;
 
@@ -30,7 +31,7 @@ public class Platform {
 			String[] voluntary = stu.getVoluntaryOrder();
 			for (String s : voluntary) {
 				if (!schNameList.contains(s) && !s.isEmpty()) {
-					throw new Exception("志願序不存在");
+					throw new MyException("志願序不存在");
 				}
 			}
 		}
