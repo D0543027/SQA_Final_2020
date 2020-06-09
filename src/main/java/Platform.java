@@ -13,13 +13,26 @@ public class Platform {
 	 * 
 	 * @param students 所有學生
 	 * @param schools  所有學校
+	 * @throws Exception
 	 */
-	public Platform(Student[] students, School[] schools) {
+	public Platform(Student[] students, School[] schools) throws Exception {
 		this.std = students;
 		this.sch = schools;
 
 		for (int i = 0; i < schools.length; i++) {
 			schNameList.add(schools[i].getSchoolName());
+		}
+
+		// ************************************************
+		// 0609 檢查志願序
+		// ************************************************
+		for (Student stu : students) {
+			String[] voluntary = stu.getVoluntaryOrder();
+			for (String s : voluntary) {
+				if (!schNameList.contains(s) && !s.isEmpty()) {
+					throw new Exception("志願序不存在");
+				}
+			}
 		}
 	}
 
@@ -31,16 +44,18 @@ public class Platform {
 			String[] voluntaryOrder = students.getVoluntaryOrder();
 			// System.out.println(students.getStudentName());
 			for (int i = 0; i < voluntaryOrder.length; i++) {
-				int index = schNameList.indexOf(voluntaryOrder[i]);
-				// System.out.println(voluntaryOrder[i]);
-				// System.out.println(index);
-				double scoreSum = students.getChineseScore() * sch[index].getChineseWeights()
-						+ students.getEnglishScore() * sch[index].getEnglishWeights()
-						+ students.getMathScore() * sch[index].getMathWeights()
-						+ students.getPhysicalScore() * sch[index].getPhysicalWeights()
-						+ students.getChemistryScore() * sch[index].getChemistryWeights();
-				// System.out.println(students.getStudentName() + ":" + scoreSum);
-				sch[index].addAndSortPreselection(students, scoreSum);
+				if (!voluntaryOrder[i].isEmpty()) {
+					int index = schNameList.indexOf(voluntaryOrder[i]);
+					// System.out.println(voluntaryOrder[i]);
+					// System.out.println(index);
+					double scoreSum = students.getChineseScore() * sch[index].getChineseWeights()
+							+ students.getEnglishScore() * sch[index].getEnglishWeights()
+							+ students.getMathScore() * sch[index].getMathWeights()
+							+ students.getPhysicalScore() * sch[index].getPhysicalWeights()
+							+ students.getChemistryScore() * sch[index].getChemistryWeights();
+					// System.out.println(students.getStudentName() + ":" + scoreSum);
+					sch[index].addAndSortPreselection(students, scoreSum);
+				}
 			}
 		}
 	}

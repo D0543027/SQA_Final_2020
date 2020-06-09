@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 public class PlatformTest {
-
 	@Test
 	public void test1() throws Exception {
 		Student st1 = new Student("01", 10, 20, 30, 40, 50, "A", "B", "C");
@@ -132,5 +131,51 @@ public class PlatformTest {
 		assertEquals("備取1:02", a.get(3).getRank() + ":" + a.get(4).getStudentName());
 	}
 	
+	@Test(expected=Exception.class)
+	public void test6() throws Exception {
+		Student st1 = new Student("01", 11, 20, 30, 40, 50, "A", "B", "C");
+		Student[] students = new Student[] {st1};
+		
+		School sch1 = new School("D", 2, 1, 1, 1, 0);
+		School[] schools = new School[] {sch1};
+		
+		Platform pf = new Platform(students, schools);
+		pf.countScore();
+		pf.fillFetch();
+	}
+	
+	@Test
+	public void test7() throws Exception{
+		Student st1 = new Student("01", 11, 20, 30, 40, 50, "", "", "");
+		Student[] students = new Student[] {st1};
+
+		School sch1 = new School("A", 2, 1, 1, 1, 0);
+		School[] schools = new School[] {sch1};
+		
+		Platform pf = new Platform(students, schools);
+		pf.countScore();
+		pf.fillFetch();
+		
+		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		assertEquals(0, sch1.getPositiveFetchLen());
+	}
+	
+	@Test
+	public void test8() throws Exception{
+		Student st1 = new Student("01", 11, 20, 30, 40, 50, "C", "", "");
+		Student[] students = new Student[] {st1};
+
+		School sch1 = new School("C", 2, 1, 1, 1, 0);
+		School[] schools = new School[] {sch1};
+		
+		Platform pf = new Platform(students, schools);
+		pf.countScore();
+		pf.fillFetch();
+		
+		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		assertEquals(1, sch1.getPositiveFetchLen());
+		
+		assertEquals("正取1:01", a.get(0).getRank() + ":" + a.get(0).getStudentName());
+	}
 
 }
