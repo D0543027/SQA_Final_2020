@@ -8,7 +8,7 @@ import java.util.List;
 public class Platform {
 	private Student[] std;
 	private School[] sch;
-	private List<String> schNameList = new ArrayList<String>();
+	private List<String> schNameList = new ArrayList();
 
 	/**
 	 * 建構Platform.
@@ -75,7 +75,7 @@ public class Platform {
 	 */
 	public void outputSchoolPreselection() throws IOException {
 		File writeName = new File("./output/school_output.txt");
-		List<PreselectionInformation> preselection = new ArrayList<PreselectionInformation>();
+		List<PreselectionInformation> preselection = new ArrayList();
 
 		try (FileWriter fwriter = new FileWriter(writeName)) {
 			for (School schools : sch) {

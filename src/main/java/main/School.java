@@ -10,8 +10,8 @@ public class School {
   private double physicalWeights = 0.0;
   private double chemistryWeights = 0.0;
   private List<PreselectionInformation> preselection = 
-          new ArrayList<PreselectionInformation>();
-  private List<Student> studentData = new ArrayList<Student>();
+          new ArrayList();
+  private List<Student> studentData = new ArrayList();
   //正取人數
   private int positiveFetchLen = 0;
   

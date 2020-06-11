@@ -20,16 +20,16 @@ public class Demo {
     LOGGER.info("--------------------開始讀檔--------------------\n");
     
     Platform plf = new Platform(students, schools);
-    System.out.print("--------------------檔案讀取完畢-----------------\n");
+    LOGGER.info("--------------------檔案讀取完畢-----------------\n");
     //將學生的志願序學校依序放入學生與加權完的成績
     plf.countScore();
     plf.fillFetch();
-    System.out.print("--------------------開始輸出--------------------\n");
+    LOGGER.info("--------------------開始輸出--------------------\n");
     //輸出
     plf.outputSchoolPreselection();
     plf.outputStudentRank();
-    System.out.print("--------------------輸出完畢--------------------\n");
-    System.out.print("--------------------檔案在output資料夾下---------\n");
+    LOGGER.info("--------------------輸出完畢--------------------\n");
+    LOGGER.info("--------------------檔案在output資料夾下---------\n");
   }
   
 }

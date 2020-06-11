@@ -16,8 +16,8 @@ public class InputFile {
 	 * @throws NumberFormatException 
 	 * @throws Exception csv不存在，或資料格式錯誤
 	 */
-	public School[] readSchoolFile(String path) throws IOException, NumberFormatException, MyException {
-		List<School> arrayListSchools = new ArrayList<School>();
+	public School[] readSchoolFile(String path) throws IOException, MyException {
+		List<School> arrayListSchools = new ArrayList();
 		InputStreamReader isr = new InputStreamReader(new FileInputStream(path));
 		
 		try (BufferedReader reader = new BufferedReader(isr)) {
@@ -46,8 +46,8 @@ public class InputFile {
 	 * @throws NumberFormatException 
 	 * @throws Exception csv不存在，或資料格式錯誤
 	 */
-	public Student[] readStudentFile(String path) throws IOException, NumberFormatException, MyException {
-		List<Student> arrayListStudents = new ArrayList<Student>();
+	public Student[] readStudentFile(String path) throws IOException, MyException {
+		List<Student> arrayListStudents = new ArrayList();
 		InputStreamReader isr = new InputStreamReader(new FileInputStream(path));
 		
 		try (BufferedReader reader = new BufferedReader(isr)) {
