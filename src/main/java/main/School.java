@@ -54,8 +54,8 @@ public class School {
       throw new MyException(schoolName + "chemistryWeights error");
     }
     this.chemistryWeights = chemistryWeights;
-    preselection = new ArrayList();
-    studentData = new ArrayList();
+    preselection = new ArrayList<PreselectionInformation>();
+    studentData = new ArrayList<Student>();
   }
   
   public String getSchoolName() {
