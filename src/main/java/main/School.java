@@ -9,8 +9,9 @@ public class School {
   private double mathWeights = 0.0;
   private double physicalWeights = 0.0;
   private double chemistryWeights = 0.0;
-  private List<PreselectionInformation> preselection;
-  private List<Student> studentData;
+  private List<PreselectionInformation> preselection = 
+          new ArrayList<>();
+  private List<Student> studentData = new ArrayList<>();
   //正取人數
   private int positiveFetchLen = 0;
   
@@ -54,8 +55,6 @@ public class School {
       throw new MyException(schoolName + "chemistryWeights error");
     }
     this.chemistryWeights = chemistryWeights;
-    preselection = new ArrayList<PreselectionInformation>();
-    studentData = new ArrayList<Student>();
   }
   
   public String getSchoolName() {
