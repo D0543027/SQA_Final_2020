@@ -3,11 +3,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Platform {
-	public Student[] std;
-	public School[] sch;
-	public ArrayList<String> schNameList = new ArrayList<String>();
+	private Student[] std;
+	private School[] sch;
+	private List<String> schNameList = new ArrayList<String>();
 
 	/**
 	 * 建構Platform.
@@ -43,18 +44,17 @@ public class Platform {
 	public void countScore() {
 		for (Student students : std) {
 			String[] voluntaryOrder = students.getVoluntaryOrder();
-			// System.out.println(students.getStudentName());
+			
 			for (int i = 0; i < voluntaryOrder.length; i++) {
 				if (!voluntaryOrder[i].isEmpty()) {
 					int index = schNameList.indexOf(voluntaryOrder[i]);
-					// System.out.println(voluntaryOrder[i]);
-					// System.out.println(index);
+
 					double scoreSum = students.getChineseScore() * sch[index].getChineseWeights()
 							+ students.getEnglishScore() * sch[index].getEnglishWeights()
 							+ students.getMathScore() * sch[index].getMathWeights()
 							+ students.getPhysicalScore() * sch[index].getPhysicalWeights()
 							+ students.getChemistryScore() * sch[index].getChemistryWeights();
-					// System.out.println(students.getStudentName() + ":" + scoreSum);
+					
 					sch[index].addAndSortPreselection(students, scoreSum);
 				}
 			}
@@ -75,7 +75,7 @@ public class Platform {
 	 */
 	public void outputSchoolPreselection() throws IOException {
 		File writeName = new File("./output/school_output.txt");
-		ArrayList<PreselectionInformation> preselection = new ArrayList<PreselectionInformation>();
+		List<PreselectionInformation> preselection = new ArrayList<PreselectionInformation>();
 
 		try (FileWriter fwriter = new FileWriter(writeName)) {
 			for (School schools : sch) {

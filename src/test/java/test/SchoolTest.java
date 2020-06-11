@@ -3,6 +3,7 @@ package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -28,7 +29,7 @@ public class SchoolTest {
 		}
 		
 		sc.fillPreselection();
-		ArrayList<PreselectionInformation> a = sc.getPreselection();
+		List<PreselectionInformation> a = sc.getPreselection();
 		
 		assertEquals(1, sc.getPositiveFetchLen());
 		assertEquals("正取1:01", a.get(0).getRank() + ":" + a.get(0).getStudentName());
@@ -52,7 +53,7 @@ public class SchoolTest {
 		}
 
 		sc.fillPreselection();
-		ArrayList<PreselectionInformation> a = sc.getPreselection();
+		List<PreselectionInformation> a = sc.getPreselection();
 
 		assertEquals(2, sc.getPositiveFetchLen());
 		assertEquals("正取1:02", a.get(0).getRank() + ":" + a.get(0).getStudentName());
@@ -78,7 +79,7 @@ public class SchoolTest {
 		}
 
 		sc.fillPreselection();
-		ArrayList<PreselectionInformation> a = sc.getPreselection();
+		List<PreselectionInformation> a = sc.getPreselection();
 
 		assertEquals(3, sc.getPositiveFetchLen());
 		
@@ -107,7 +108,7 @@ public class SchoolTest {
 		}
 
 		sc.fillPreselection();
-		ArrayList<PreselectionInformation> a = sc.getPreselection();
+		List<PreselectionInformation> a = sc.getPreselection();
 
 		assertEquals(3, sc.getPositiveFetchLen());
 		
@@ -137,7 +138,7 @@ public class SchoolTest {
 		}
 
 		sc.fillPreselection();
-		ArrayList<PreselectionInformation> a = sc.getPreselection();
+		List<PreselectionInformation> a = sc.getPreselection();
 
 		assertEquals(3, sc.getPositiveFetchLen());
 

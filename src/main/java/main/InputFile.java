@@ -1,10 +1,10 @@
 package main;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 
 public class InputFile {
 	/**
@@ -12,12 +12,14 @@ public class InputFile {
 	 * 型態：String,double,double,double,double,double
 	 * 
 	 * @return School[]
+	 * @throws MyException 
+	 * @throws NumberFormatException 
 	 * @throws Exception csv不存在，或資料格式錯誤
 	 */
-	public School[] readSchoolFile(String path) throws Exception {
-		ArrayList<School> arrayListSchools = new ArrayList<School>();
-		// String path = "./input/school_input.csv";
+	public School[] readSchoolFile(String path) throws IOException, NumberFormatException, MyException {
+		List<School> arrayListSchools = new ArrayList<School>();
 		InputStreamReader isr = new InputStreamReader(new FileInputStream(path));
+		
 		try (BufferedReader reader = new BufferedReader(isr)) {
 			String line = null;
 			// 讀取標題
@@ -40,12 +42,14 @@ public class InputFile {
 	 * 型態:String,int,int,int,int,int,String,String,String
 	 * 
 	 * @return Student[]
+	 * @throws MyException 
+	 * @throws NumberFormatException 
 	 * @throws Exception csv不存在，或資料格式錯誤
 	 */
-	public Student[] readStudentFile(String path) throws Exception {
-		ArrayList<Student> arrayListStudents = new ArrayList<Student>();
-		// String path = "./input/student_input.csv";
+	public Student[] readStudentFile(String path) throws IOException, NumberFormatException, MyException {
+		List<Student> arrayListStudents = new ArrayList<Student>();
 		InputStreamReader isr = new InputStreamReader(new FileInputStream(path));
+		
 		try (BufferedReader reader = new BufferedReader(isr)) {
 			String line = null;
 			// 讀取標題

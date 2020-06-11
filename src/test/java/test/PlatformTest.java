@@ -2,6 +2,7 @@ package test;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -27,7 +28,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> p4 = sch4.getPreselection();
+		List<PreselectionInformation> p4 = sch4.getPreselection();
 		assertEquals(0, sch4.getPositiveFetchLen());
 	}
 	
@@ -48,7 +49,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		List<PreselectionInformation> a = sch1.getPreselection();
 
 		assertEquals(2, sch1.getPositiveFetchLen());
 		assertEquals("正取1:02", a.get(0).getRank() + ":" + a.get(0).getStudentName());
@@ -72,7 +73,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		List<PreselectionInformation> a = sch1.getPreselection();
 
 		assertEquals(3, sch1.getPositiveFetchLen());
 		
@@ -99,7 +100,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		List<PreselectionInformation> a = sch1.getPreselection();
 
 		assertEquals(3, sch1.getPositiveFetchLen());
 		
@@ -127,7 +128,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> a = sch3.getPreselection();
+		List<PreselectionInformation> a = sch3.getPreselection();
 
 		assertEquals(3, sch3.getPositiveFetchLen());
 
@@ -163,7 +164,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		List<PreselectionInformation> a = sch1.getPreselection();
 		assertEquals(0, sch1.getPositiveFetchLen());
 	}
 	
@@ -179,7 +180,7 @@ public class PlatformTest {
 		pf.countScore();
 		pf.fillFetch();
 		
-		ArrayList<PreselectionInformation> a = sch1.getPreselection();
+		List<PreselectionInformation> a = sch1.getPreselection();
 		assertEquals(1, sch1.getPositiveFetchLen());
 		
 		assertEquals("正取1:01", a.get(0).getRank() + ":" + a.get(0).getStudentName());

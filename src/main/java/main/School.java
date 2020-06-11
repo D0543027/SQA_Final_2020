@@ -1,5 +1,6 @@
 package main;
 import java.util.ArrayList;
+import java.util.List;
 
 public class School {
   private String schoolName;
@@ -8,9 +9,9 @@ public class School {
   private double mathWeights = 0.0;
   private double physicalWeights = 0.0;
   private double chemistryWeights = 0.0;
-  private ArrayList<PreselectionInformation> preselection = 
+  private List<PreselectionInformation> preselection = 
           new ArrayList<PreselectionInformation>();
-  private ArrayList<Student> studentData = new ArrayList<Student>();
+  private List<Student> studentData = new ArrayList<Student>();
   //正取人數
   private int positiveFetchLen = 0;
   
@@ -80,7 +81,7 @@ public class School {
     return this.chemistryWeights;
   }
   
-  public ArrayList<PreselectionInformation> getPreselection() {
+  public List<PreselectionInformation> getPreselection() {
     return this.preselection;
   }
   
@@ -129,12 +130,7 @@ public class School {
     //正取排名
     for (int i = 0;i < this.preselection.size();i++) {
       //第一名
-      if (this.positiveFetchLen == 0) {
-        String temp = "正取" +  Integer.toString(positiveFetchRank);
-        this.preselection.get(i).setRank(temp);
-        this.studentData.get(i).setResult(this.schoolName + ":" + temp);
-        this.positiveFetchLen = this.positiveFetchLen + 1;
-      } else if (this.preselection.get(i).getScoreSum() 
+      if (this.positiveFetchLen == 0 || this.preselection.get(i).getScoreSum() 
               == this.preselection.get(i - 1).getScoreSum()) {
         String temp = "正取" +  Integer.toString(positiveFetchRank);
         this.preselection.get(i).setRank(temp);
