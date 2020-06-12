@@ -28,36 +28,31 @@ public class Student {
       int[] scores,
       String order1,String order2,String order3)  throws MyException {
     this.studentName = studentName;
-    int chinese = scores[0];
-    int english = scores[1];
-    int math = scores[2];
-    int physical = scores[3];
-    int chemistry = scores[4];
+    chinese = scores[0];
+    english = scores[1];
+    math = scores[2];
+    physical = scores[3];
+    chemistry = scores[4];
     
     if ((chinese < 0) || (chinese > 100)) {
       throw new MyException(studentName + "Chinese score error");
     }
-    this.chinese = chinese;
         
     if ((english < 0) || (english > 100)) {
       throw new MyException(studentName + "English score error");
     }
-    this.english = english;
         
     if ((math < 0) || (math > 100)) {
       throw new MyException(studentName + "Math score error");
     }
-    this.math = math;
         
     if ((physical < 0) || (physical > 100)) {
       throw new MyException(studentName + "Physical score error");
     }
-    this.physical = physical;
         
     if ((chemistry < 0) || (chemistry > 100)) {
       throw new MyException(studentName + "Chemistry score error");
     }
-    this.chemistry = chemistry;
         
     this.voluntaryOrder[0] = order1;
     this.voluntaryOrder[1] = order2;
