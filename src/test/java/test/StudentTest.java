@@ -9,7 +9,7 @@ public class StudentTest {
 
 	@Test
 	public void test1() throws Exception {
-		Student s = new Student("01", 10, 20, 40, 50, 60, "D", "E", "F");
+		Student s = new Student("01", new int[] {10, 20, 40, 50, 60}, "D", "E", "F");
 		
 		assertEquals("01", s.getStudentName());
 		
@@ -24,51 +24,51 @@ public class StudentTest {
 	
 	@Test(expected=Exception.class)
 	public void test2() throws Exception {
-		Student s = new Student("01", -1, 20, 40, 50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {-1, 20, 40, 50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test3() throws Exception {
-		Student s = new Student("01", 101, 20, 40, 50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {101, 20, 40, 50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test4() throws Exception {
-		Student s = new Student("01", 10, -20, 40, 50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, -20, 40, 50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test5() throws Exception {
-		Student s = new Student("01", 10, 200, 40, 50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 200, 40, 50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test6() throws Exception {
-		Student s = new Student("01", 10, 20, -40, 50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 20, -40, 50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test7() throws Exception {
-		Student s = new Student("01", 10, 20, 400, 50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 20, 400, 50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test8() throws Exception {
-		Student s = new Student("01", 10, 20, 40, -50, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 20, 40, -50, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test9() throws Exception {
-		Student s = new Student("01", 10, 20, 40, 500, 60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 20, 40, 500, 60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test10() throws Exception {
-		Student s = new Student("01", 10, 20, 40, 50, -60, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 20, 40, 50, -60}, "A", "B", "C");
 	}
 	
 	@Test(expected=Exception.class)
 	public void test11() throws Exception {
-		Student s = new Student("01", 10, 20, 40, 50, 600, "A", "B", "C");
+		Student s = new Student("01", new int[] {10, 20, 40, 50, 600}, "A", "B", "C");
 	}
 }

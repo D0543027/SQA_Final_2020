@@ -25,10 +25,15 @@ public class Student {
    */
   public Student(
       String studentName,
-      int chinese,int english,int math,int physical,int chemistry,
+      int[] scores,
       String order1,String order2,String order3)  throws MyException {
     this.studentName = studentName;
-        
+    int chinese = scores[0];
+    int english = scores[1];
+    int math = scores[2];
+    int physical = scores[3];
+    int chemistry = scores[4];
+    
     if ((chinese < 0) || (chinese > 100)) {
       throw new MyException(studentName + "Chinese score error");
     }

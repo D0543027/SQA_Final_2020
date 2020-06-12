@@ -15,7 +15,7 @@ public class SchoolTest {
 
 	@Test
 	public void test1() throws Exception {
-		Student st1 = new Student("01", 10, 20, 30, 40, 50, "A", "B", "C");
+		Student st1 = new Student("01", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
 		Student[] students = new Student[] {st1};
 
 		School sc = new School("A", 1.5, 1, 1, 1, 0.5);
@@ -37,8 +37,8 @@ public class SchoolTest {
 	
 	@Test
 	public void test2() throws Exception {
-		Student st1 = new Student("01", 10, 20, 30, 40, 50, "A", "B", "C");
-		Student st2 = new Student("02", 10, 20, 30, 40, 50, "A", "B", "C");
+		Student st1 = new Student("01", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
+		Student st2 = new Student("02", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
 		
 		Student[] students = new Student[] {st1, st2};
 
@@ -62,9 +62,9 @@ public class SchoolTest {
 	
 	@Test
 	public void test3() throws Exception {
-		Student st1 = new Student("01", 10, 20, 30, 40, 50, "A", "B", "C");
-		Student st2 = new Student("02", 11, 20, 30, 40, 50, "A", "B", "C");
-		Student st3 = new Student("03", 100, 20, 30, 40, 50, "A", "B", "C");
+		Student st1 = new Student("01", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
+		Student st2 = new Student("02", new int[] {11, 20, 30, 40, 50}, "A", "B", "C");
+		Student st3 = new Student("03", new int[] {100, 20, 30, 40, 50}, "A", "B", "C");
 
 		Student[] students = new Student[] {st1, st2, st3};
 
@@ -90,10 +90,10 @@ public class SchoolTest {
 	
 	@Test
 	public void test4() throws Exception {
-		Student st1 = new Student("01", 11, 20, 30, 40, 50, "A", "B", "C");
-		Student st2 = new Student("02", 10, 20, 30, 40, 50, "A", "B", "C");
-		Student st3 = new Student("03", 100, 20, 30, 40, 50, "A", "B", "C");
-		Student st4 = new Student("04", 100, 100, 30, 40, 50, "A", "B", "C");
+		Student st1 = new Student("01", new int[] {11, 20, 30, 40, 50}, "A", "B", "C");
+		Student st2 = new Student("02", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
+		Student st3 = new Student("03", new int[] {100, 20, 30, 40, 50}, "A", "B", "C");
+		Student st4 = new Student("04", new int[] {100, 100, 30, 40, 50}, "A", "B", "C");
 		
 		Student[] students = new Student[] {st1, st2, st3, st4};
 
@@ -120,11 +120,11 @@ public class SchoolTest {
 	
 	@Test
 	public void test5() throws Exception {
-		Student st1 = new Student("01", 11, 20, 30, 40, 50, "A", "B", "C");
-		Student st2 = new Student("02", 10, 20, 30, 40, 50, "A", "B", "C");
-		Student st3 = new Student("03", 100, 20, 30, 40, 50, "A", "B", "C");
-		Student st4 = new Student("04", 100, 100, 30, 40, 50, "A", "B", "C");
-		Student st5 = new Student("05", 10, 20, 30, 40, 50, "A", "B", "C");
+		Student st1 = new Student("01", new int[] {11, 20, 30, 40, 50}, "A", "B", "C");
+		Student st2 = new Student("02", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
+		Student st3 = new Student("03", new int[] {100, 20, 30, 40, 50}, "A", "B", "C");
+		Student st4 = new Student("04", new int[] {100, 100, 30, 40, 50}, "A", "B", "C");
+		Student st5 = new Student("05", new int[] {10, 20, 30, 40, 50}, "A", "B", "C");
 		Student[] students = new Student[] {st1, st2, st3, st4, st5};
 
 		School sc = new School("A", 1.5, 1, 1, 1, 0.5);

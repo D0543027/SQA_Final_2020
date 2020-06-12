@@ -57,9 +57,9 @@ public class InputFile {
 			while ((line = reader.readLine()) != null) {
 				String[] item = line.split(",");
 				arrayListStudents.add(
-						new Student(item[0].trim(), Integer.parseInt(item[1].trim()), Integer.parseInt(item[2].trim()),
+						new Student(item[0].trim(), new int[] {Integer.parseInt(item[1].trim()), Integer.parseInt(item[2].trim()),
 								Integer.parseInt(item[3].trim()), Integer.parseInt(item[4].trim()),
-								Integer.parseInt(item[5].trim()), item[6].trim(), item[7].trim(), item[8].trim()));
+								Integer.parseInt(item[5].trim())}, item[6].trim(), item[7].trim(), item[8].trim()));
 			}
 		}
 		Student[] students = new Student[arrayListStudents.size()];
