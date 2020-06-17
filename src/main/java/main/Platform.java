@@ -74,7 +74,14 @@ public class Platform {
 	 * 將School preselection輸出成school_output.txt
 	 */
 	public void outputSchoolPreselection() throws IOException {
-		File writeName = new File("./output/school_output.txt");
+		String directory = "./output";
+		File dir = new File(directory);
+		if(!dir.exists())
+			dir.mkdirs();
+		
+		String filePath = directory + "/school_output.txt";
+		File writeName = new File(filePath);
+		
 		List<PreselectionInformation> preselection = new ArrayList<>();
 
 		try (FileWriter fwriter = new FileWriter(writeName)) {
@@ -104,7 +111,14 @@ public class Platform {
 	 * 將Student result輸出成student_output.txt
 	 */
 	public void outputStudentRank() throws IOException {
-		File writeName = new File("./output/student_output.txt");
+		String directory = "./output";
+		File dir = new File(directory);
+		if(!dir.exists())
+			dir.mkdirs();
+		
+		String filePath = directory + "/student_output.txt";
+		File writeName = new File(filePath);
+		
 		try (FileWriter fwriter = new FileWriter(writeName)) {
 			for (Student students : std) {
 				fwriter.write(students.getStudentName() + "\n");
