@@ -76,8 +76,8 @@ public class Platform {
 	public void outputSchoolPreselection() throws IOException {
 		String directory = "./output";
 		File dir = new File(directory);
-		if(!dir.exists())
-			dir.mkdirs();
+		
+		dir.mkdirs();
 		
 		String filePath = directory + "/school_output.txt";
 		File writeName = new File(filePath);
@@ -113,8 +113,8 @@ public class Platform {
 	public void outputStudentRank() throws IOException {
 		String directory = "./output";
 		File dir = new File(directory);
-		if(!dir.exists())
-			dir.mkdirs();
+		
+		dir.mkdirs();
 		
 		String filePath = directory + "/student_output.txt";
 		File writeName = new File(filePath);

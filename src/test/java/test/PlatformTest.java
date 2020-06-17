@@ -185,5 +185,4 @@ public class PlatformTest {
 		
 		assertEquals("正取1:01", a.get(0).getRank() + ":" + a.get(0).getStudentName());
 	}
-
 }
